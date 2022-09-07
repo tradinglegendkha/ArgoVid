@@ -1,13 +1,13 @@
 from pytube import YouTube
+from window import link_field
 
-link = input("Print the video url: ")
-url = link
-myVid = YouTube(url)
+def ytdownload(): 
+    link = link_field.get()
+    myVid = YouTube(link).streams.get_highest_resolution()
 
-print("-------- Video Title --------")
-print(myVid.title)
+    print("-------- Video Title --------")
+    print(myVid.title)
 
-print("-------- Downloading Video --------")
+    print("-------- Downloading Video --------")
 
-myVid = myVid.streams.get_highest_resolution()
-myVid.download()
+    myVid.download()

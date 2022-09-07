@@ -1,7 +1,6 @@
-from select import select
 from tkinter import *
 from tkinter import filedialog
-from venv import create
+from YoutubeVid import ytdownload
 
 #functions
 def select_path():
@@ -26,11 +25,11 @@ canvas.create_window(300, 220, window=link_field)
 
 #download path
 path_label = Label = Label(window, text="Select path for the Download")
-select_button = Button(window, text="Select", command=select_path)
+select_button = Button(window, text="Select", command=select_path, bg='gray')
 canvas.create_window(300, 530, window=path_label)
 canvas.create_window(300, 570, window=select_button)
 
-download_button = Button(window, text="Download") 
+download_button = Button(window, text="Download", command=ytdownload) 
 
 canvas.create_window(300, 350, window=download_button)
 
